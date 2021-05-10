@@ -1,6 +1,12 @@
-# Realiser
-Short description and motivation.
 
+<p align="center">
+  <a href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer">
+    <img src="image.webp" width="400">
+  </a>
+</p>
+
+# Realiser
+The Rails engine provides the settings data to your app.
 ## Usage
 How to use my plugin.
 

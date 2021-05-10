@@ -1,7 +1,31 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      No settings. Add new variable in <%= link_to 'Here', new_web_setting_path %>
-    </div>
+<%= render 'shared/message' %>
+
+<div class="row">
+  <div class="col-md-12 mb-4">
+    <%= link_to 'Add new setting', new_web_setting_path, class: 'btn btn-secondary d-block' %>
   </div>
 </div>
+
+<% if @settings.present? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @settings.each.with_index(1) do |setting, index| %>
+        <tr>
+          <td><%= link_to index, web_setting_path(setting) %></td>
+          <td><%= setting.key %></td>
+          <td><%= setting.value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>The settings was blank, try add a new one in <%= link_to 'here', new_web_setting_path %>.</p>
+<% end %>
+   

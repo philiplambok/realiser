@@ -1,0 +1,31 @@
+<%= render 'shared/message' %>
+
+<div class="d-flex justify-content-between">
+  <h4>Setting #<%= @setting.id %></h4>
+  <%= button_to 'Destroy', web_setting_path(@setting),
+                         method: :delete,
+                         class: 'btn btn-danger' %>
+</div>
+
+<table class="table">
+  <tr>
+    <th class="w-20">Key</th>
+    <td class="w-80"><%= @setting.key %></td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td><%= @setting.value %></td>
+  </tr>
+  <tr>
+    <th>Created At</th>
+    <td><%= @setting.created_at %></td>
+  </tr>
+  <tr>
+    <th>Updated At</th>
+    <td><%= @setting.updated_at %></td>
+  </tr>
+</table>
+
+<%= link_to 'Edit', edit_web_setting_path(@setting), class: 'btn btn-info px-4' %>
+<%= link_to 'Back', edit_web_setting_path(@setting), class: 'btn btn-default px-4' %>
+

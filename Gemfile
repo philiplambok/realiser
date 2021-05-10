@@ -9,4 +9,7 @@ group :development do
 end
 
 # To use a debugger
-# gem 'byebug', group: [:development, :test]
+group :development, :test do
+  gem 'byebug'
+  gem 'pry', require: true
+end

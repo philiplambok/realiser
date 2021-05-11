@@ -6,7 +6,7 @@
 </p>
 
 # Realiser
-The Rails engine will help you to provides the setting data to your app.
+The Rails engine will help you to provides the setting data to your app. See the demo engine in [here](https://github.com/philiplambok/demo-realiser).
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -28,7 +28,8 @@ $ gem install realiser
 After that, run this command to generate the migration files:
 
 ```sh
-$> bundle exec rails g realiser install
+$ bundle exec rails g realiser install
+$ bundle exec rake db:migrate
 ```
 
 Then, you can enable the Web UI, with mount the engine in your `config/routes.rb`:
@@ -38,6 +39,13 @@ Rails.application.routes.draw do
   mount Realiser::Engine => '/realiser'
 end
 ```
+
+Then, add this line to your 'app/assets/config/manifest.js` to help compile the stylesheets.
+
+```js
+//= link_directory ../stylesheets .css
+```
+
 Done, you can manage the settings data by visiting the path `/realiser`.
 
 The UI will be something like this:

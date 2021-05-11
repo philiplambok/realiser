@@ -1,6 +1,6 @@
 
 <p align="center">
-  <a href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer">
+  <a href="#" target="_blank" rel="noopener noreferrer">
     <img src="image.webp" width="200">
   </a>
 </p>
@@ -43,7 +43,7 @@ end
 Then, add this line to your `app/assets/config/manifest.js` to help compile the stylesheets.
 
 ```js
-//= link_directory ../stylesheets .css
+//= link realiser/application.css
 ```
 
 Done, you can manage the settings data by visiting the path `/realiser`.
@@ -85,7 +85,7 @@ Setting['PAYMENT_TOKEN'] #> 'sgFadLoRx5rX1VL02OalMQ'
 ## Contributing
 PR are welcome! 
 
-You can use [the issue tab](https://github.com/philiplambok/realiser/issues) for asking me a question about this engine, or report a bug, or even if you want to request a feature.
+You can use [the issue tab](https://github.com/philiplambok/realiser/issues) for asking me a question about this engine, or report a bug, or even to request a feature.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

@@ -1,11 +1,11 @@
 module Realiser
   # The Realiser Setting
   class Setting < Realiser::ApplicationRecord
-    validates :key, presence: true
+    validates :key, uniqueness: { case_sensitive: false }, presence: true
     validates :value, presence: true
 
     def self.[](key)
-      puts key
+      find_by(key: key).try(:value)
     end
   end
 end

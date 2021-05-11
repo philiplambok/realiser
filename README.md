@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer">
-    <img src="image.webp" width="400">
+    <img src="image.webp" width="200">
   </a>
 </p>
 

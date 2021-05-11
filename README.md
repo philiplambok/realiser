@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 end
 ```
 
-Then, add this line to your 'app/assets/config/manifest.js` to help compile the stylesheets.
+Then, add this line to your `app/assets/config/manifest.js` to help compile the stylesheets.
 
 ```js
 //= link_directory ../stylesheets .css

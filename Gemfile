@@ -12,4 +12,5 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'pry', require: true
+  gem 'rubocop'
 end

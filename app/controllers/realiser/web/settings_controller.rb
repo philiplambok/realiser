@@ -17,20 +17,22 @@ module Realiser
         @setting = Realiser::Setting.find_by(id: params[:id])
       end
 
+      # rubocop:disable Style/RedundantArgument
       def update
         setting = Realiser::Setting.find_by(id: params[:id])
         if setting.update(form_params)
-          flash[:success] = "Successfully to update the setting"
+          flash[:success] = 'Successfully to update the setting'
           return redirect_to web_setting_path(setting)
         end
         flash.now[:danger] = setting.errors.full_messages.join('')
         render :edit
       end
+      # rubocop:enable Style/RedundantArgument
 
       def destroy
         setting = Realiser::Setting.find_by(id: params[:id])
         setting.destroy!
-        flash[:success] = "Successfully deleted the setting"
+        flash[:success] = 'Successfully deleted the setting'
         redirect_to root_path
       end
 

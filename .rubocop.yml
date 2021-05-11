@@ -1,0 +1,24 @@
+AllCops:
+  TargetRubyVersion: 3.0.1
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/BlockLength:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false

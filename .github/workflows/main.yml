@@ -16,4 +16,5 @@ jobs:
         gem install bundler -v 2.2.3
         bundle install
         bundle exec rubocop
+        cd test/dummy && rails db:test:prepare && rails db:migrate
         bundle exec rails test

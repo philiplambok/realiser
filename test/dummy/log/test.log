@@ -659,3 +659,346 @@ Processing by Realiser::Web::SettingsController#index as HTML
   Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 21.1ms | Allocations: 6500)
 Completed 200 OK in 33ms (Views: 26.2ms | ActiveRecord: 0.1ms | Allocations: 10694)
   [1m[36mTRANSACTION (3.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+SettingNewTest: test_returns_expected_status_code
+-------------------------------------------------
+Started GET "/realiser/new" for 127.0.0.1 at 2021-05-12 15:17:05 +0700
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+SettingIndexTest: test_returns_expected_response_when_visiting_the_index
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (1.0ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:17:05.513886"], ["updated_at", "2021-05-12 08:17:05.513886"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/realiser" for 127.0.0.1 at 2021-05-12 15:17:05 +0700
+Processing by Realiser::Web::SettingsController#index as HTML
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/index.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 3.8ms | Allocations: 399)
+  [1m[36mRealiser::Setting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings"[0m
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/index.html.erb within layouts/realiser/application (Duration: 7.6ms | Allocations: 1845)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 20.8ms | Allocations: 6530)
+Completed 200 OK in 32ms (Views: 25.3ms | ActiveRecord: 0.1ms | Allocations: 10727)
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+SettingTest: test_returns_nil_response_when_access_by_[]
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:17:05.573905"], ["updated_at", "2021-05-12 08:17:05.573905"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO_WORLD"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+SettingTest: test_returns_expected_response_when_access_by_[]
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:17:05.577085"], ["updated_at", "2021-05-12 08:17:05.577085"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.0ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RealiserTest: test_it_has_a_version_number
+------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+SettingNewTest: test_returns_expected_status_code
+-------------------------------------------------
+Started GET "/realiser/settings/new" for 127.0.0.1 at 2021-05-12 15:17:25 +0700
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RealiserTest: test_it_has_a_version_number
+------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+SettingIndexTest: test_returns_expected_response_when_visiting_the_index
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (1.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:17:25.265021"], ["updated_at", "2021-05-12 08:17:25.265021"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/realiser" for 127.0.0.1 at 2021-05-12 15:17:25 +0700
+Processing by Realiser::Web::SettingsController#index as HTML
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/index.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 4.0ms | Allocations: 399)
+  [1m[36mRealiser::Setting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings"[0m
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/index.html.erb within layouts/realiser/application (Duration: 7.6ms | Allocations: 1845)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 16.9ms | Allocations: 6543)
+Completed 200 OK in 29ms (Views: 22.1ms | ActiveRecord: 0.1ms | Allocations: 10740)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+SettingTest: test_returns_expected_response_when_access_by_[]
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:17:25.317644"], ["updated_at", "2021-05-12 08:17:25.317644"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+SettingTest: test_returns_nil_response_when_access_by_[]
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.5ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:17:25.322435"], ["updated_at", "2021-05-12 08:17:25.322435"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.0ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO_WORLD"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+SettingNewTest: test_returns_expected_status_code
+-------------------------------------------------
+Started GET "/realiser/web/settings/new" for 127.0.0.1 at 2021-05-12 15:17:41 +0700
+Processing by Realiser::Web::SettingsController#new as HTML
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/new.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 6.3ms | Allocations: 400)
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/new.html.erb within layouts/realiser/application (Duration: 23.0ms | Allocations: 5348)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 32.1ms | Allocations: 10053)
+Completed 200 OK in 46ms (Views: 36.0ms | ActiveRecord: 0.3ms | Allocations: 18066)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+SettingTest: test_returns_nil_response_when_access_by_[]
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:17:41.587172"], ["updated_at", "2021-05-12 08:17:41.587172"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO_WORLD"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+SettingTest: test_returns_expected_response_when_access_by_[]
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.2ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:17:41.590942"], ["updated_at", "2021-05-12 08:17:41.590942"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.0ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RealiserTest: test_it_has_a_version_number
+------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+SettingIndexTest: test_returns_expected_response_when_visiting_the_index
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.4ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:17:41.595635"], ["updated_at", "2021-05-12 08:17:41.595635"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/realiser" for 127.0.0.1 at 2021-05-12 15:17:41 +0700
+Processing by Realiser::Web::SettingsController#index as HTML
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/index.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 0.2ms | Allocations: 124)
+  [1m[36mRealiser::Setting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings"[0m
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/index.html.erb within layouts/realiser/application (Duration: 1.9ms | Allocations: 789)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 3.1ms | Allocations: 1484)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 2134)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RealiserTest: test_it_has_a_version_number
+------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+SettingTest: test_returns_expected_response_when_access_by_[]
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.4ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:18:45.258914"], ["updated_at", "2021-05-12 08:18:45.258914"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+SettingTest: test_returns_nil_response_when_access_by_[]
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.5ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:18:45.264515"], ["updated_at", "2021-05-12 08:18:45.264515"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO_WORLD"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+SettingIndexTest: test_returns_expected_response_when_visiting_the_index
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:18:45.417910"], ["updated_at", "2021-05-12 08:18:45.417910"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/realiser" for 127.0.0.1 at 2021-05-12 15:18:45 +0700
+Processing by Realiser::Web::SettingsController#index as HTML
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/index.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 3.2ms | Allocations: 400)
+  [1m[36mRealiser::Setting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings"[0m
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/index.html.erb within layouts/realiser/application (Duration: 5.7ms | Allocations: 1814)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 14.8ms | Allocations: 6513)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 0.1ms | Allocations: 10707)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+SettingNewTest: test_returns_expected_status_code
+-------------------------------------------------
+Started GET "/realiser/web/settings/new" for 127.0.0.1 at 2021-05-12 15:18:45 +0700
+Processing by Realiser::Web::SettingsController#new as HTML
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/new.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 0.1ms | Allocations: 124)
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/new.html.erb within layouts/realiser/application (Duration: 8.3ms | Allocations: 4360)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 9.3ms | Allocations: 5068)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 5745)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+SettingShowTest: test_returns_expected_status_code
+--------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:18:45.478037"], ["updated_at", "2021-05-12 08:18:45.478037"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/realiser/web/settings/1" for 127.0.0.1 at 2021-05-12 15:18:45 +0700
+Processing by Realiser::Web::SettingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRealiser::Setting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/show.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 0.1ms | Allocations: 117)
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/show.html.erb within layouts/realiser/application (Duration: 2.0ms | Allocations: 709)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 2.5ms | Allocations: 1346)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 2243)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+SettingNewTest: test_returns_expected_status_code
+-------------------------------------------------
+Started GET "/realiser/web/settings/new" for 127.0.0.1 at 2021-05-12 15:19:08 +0700
+Processing by Realiser::Web::SettingsController#new as HTML
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/new.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 3.6ms | Allocations: 400)
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/new.html.erb within layouts/realiser/application (Duration: 10.9ms | Allocations: 5348)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 19.0ms | Allocations: 10066)
+Completed 200 OK in 34ms (Views: 23.0ms | ActiveRecord: 0.3ms | Allocations: 18079)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+SettingTest: test_returns_expected_response_when_access_by_[]
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:19:08.409669"], ["updated_at", "2021-05-12 08:19:08.409669"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+SettingTest: test_returns_nil_response_when_access_by_[]
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.2ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:19:08.413218"], ["updated_at", "2021-05-12 08:19:08.413218"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.0ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO_WORLD"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RealiserTest: test_it_has_a_version_number
+------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+SettingShowTest: test_returns_expected_status_code
+--------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:19:08.416571"], ["updated_at", "2021-05-12 08:19:08.416571"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/realiser/web/settings/1" for 127.0.0.1 at 2021-05-12 15:19:08 +0700
+Processing by Realiser::Web::SettingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRealiser::Setting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/show.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/show.html.erb within layouts/realiser/application (Duration: 1.9ms | Allocations: 757)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 2.9ms | Allocations: 1439)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 2357)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+SettingEditTest: test_returns_expected_status_code
+--------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.2ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:19:08.427095"], ["updated_at", "2021-05-12 08:19:08.427095"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/realiser/web/settings/1/edit" for 127.0.0.1 at 2021-05-12 15:19:08 +0700
+Processing by Realiser::Web::SettingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRealiser::Setting Load (0.0ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/edit.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 0.2ms | Allocations: 86)
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/edit.html.erb within layouts/realiser/application (Duration: 2.7ms | Allocations: 1062)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 3.6ms | Allocations: 1698)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 2352)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+SettingIndexTest: test_returns_expected_response_when_visiting_the_index
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 08:19:08.437081"], ["updated_at", "2021-05-12 08:19:08.437081"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/realiser" for 127.0.0.1 at 2021-05-12 15:19:08 +0700
+Processing by Realiser::Web::SettingsController#index as HTML
+  Rendering layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb
+  Rendering /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/index.html.erb within layouts/realiser/application
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/shared/_message.html.erb (Duration: 0.1ms | Allocations: 86)
+  [1m[36mRealiser::Setting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings"[0m
+  Rendered /Users/philiplambok/Codes/ruby/engines/realiser/app/views/realiser/web/settings/index.html.erb within layouts/realiser/application (Duration: 1.2ms | Allocations: 651)
+  Rendered layout /Users/philiplambok/Codes/ruby/engines/realiser/app/views/layouts/realiser/application.html.erb (Duration: 1.7ms | Allocations: 1296)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1856)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m

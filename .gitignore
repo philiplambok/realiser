@@ -3,4 +3,5 @@
 /log/*.log
 /pkg/
 /tmp/
+test/dummy/log/test.log
 .byebug_history

@@ -8,6 +8,9 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/RedundantFetchBlock:
+  Enabled: false
+
 Metrics/AbcSize:
   Max: 30
 

@@ -11,7 +11,7 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0.1
-    - name: Run the static analysis
+    - name: Run the static analysis and test
       run: |
         gem install bundler -v 2.2.3
         bundle install

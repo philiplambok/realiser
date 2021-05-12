@@ -121,3 +121,90 @@ RealiserTest: test_returns_expected_response_with_array_getter
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mSetting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (2.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+SettingTest: test_returns_expected_response_when_access_by_[]
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.8ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 07:37:27.174910"], ["updated_at", "2021-05-12 07:37:27.174910"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+SettingTest: test_returns_nil_response_when_access_by_[]
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.2ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 07:37:27.181611"], ["updated_at", "2021-05-12 07:37:27.181611"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.0ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO_WORLD"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RealiserTest: test_it_has_a_version_number
+------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RealiserTest: test_it_has_a_version_number
+------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+SettingTest: test_returns_expected_response_when_access_by_[]
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.3ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 07:38:00.792624"], ["updated_at", "2021-05-12 07:38:00.792624"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+SettingTest: test_returns_nil_response_when_access_by_[]
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.2ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 07:38:00.797617"], ["updated_at", "2021-05-12 07:38:00.797617"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.0ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO_WORLD"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+SettingTest: test_returns_expected_response_when_access_by_[]
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.4ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 07:38:19.358110"], ["updated_at", "2021-05-12 07:38:19.358110"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.1ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+SettingTest: test_returns_nil_response_when_access_by_[]
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRealiser::Setting Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "realiser_settings" WHERE LOWER("realiser_settings"."key") = LOWER(?) LIMIT ?[0m  [["key", "HELLO"], ["LIMIT", 1]]
+  [1m[36mSetting Create (0.2ms)[0m  [1m[32mINSERT INTO "realiser_settings" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "HELLO"], ["value", "WORLD"], ["created_at", "2021-05-12 07:38:19.361783"], ["updated_at", "2021-05-12 07:38:19.361783"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSetting Load (0.0ms)[0m  [1m[34mSELECT "realiser_settings".* FROM "realiser_settings" WHERE "realiser_settings"."key" = ? LIMIT ?[0m  [["key", "HELLO_WORLD"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RealiserTest: test_it_has_a_version_number
+------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m

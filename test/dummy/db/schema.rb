@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_072326) do
-
-  create_table "realiser_settings", force: :cascade do |t|
-    t.string "key"
-    t.string "value"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["key"], name: "index_realiser_settings_on_key"
+ActiveRecord::Schema.define(version: 20_210_512_072_326) do
+  create_table 'realiser_settings', force: :cascade do |t|
+    t.string 'key'
+    t.string 'value'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['key'], name: 'index_realiser_settings_on_key'
   end
-
 end

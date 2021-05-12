@@ -16,5 +16,6 @@ jobs:
         gem install bundler -v 2.2.3
         bundle install
         bundle exec rubocop
+        sudo apt-get install libsqlite3-dev
         cd test/dummy && rails db:test:prepare && rails db:migrate
         bundle exec rails test

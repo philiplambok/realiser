@@ -1,8 +1,8 @@
 Description:
-    Explain the generator
+    Install the realiser gem with creating the migration files
 
 Example:
-    bin/rails generate realiser Thing
+    bin/rails generate realiser install
 
     This will create:
-        what/will/it/create
+        db/migrate/**_create_realiser_settings.rb
